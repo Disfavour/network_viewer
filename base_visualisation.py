@@ -18,7 +18,7 @@ from mayavi.core.ui.api import MayaviScene, MlabSceneModel, SceneEditor
 class Visualization(HasTraits):
     def __init__(self, data, mode, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.data = data[::10,::50, ::50]
+        self.data = data[::]
         self.mode = mode
         #print(self.data)
 

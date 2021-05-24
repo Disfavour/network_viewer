@@ -123,11 +123,24 @@ class Example(QWidget):
         plt.scatter(cur_d[:, 0], cur_d[:, 1], c=labels, cmap='Paired')
         plt.show()
         """
+    def get_agg_c(self):
+        #if self.arr_data:
+        cur_d = self.arr_data[0]
+        labels = clust.get_labels_a_cuda(cur_d)
+        plt.scatter(cur_d[:,0], cur_d[:,1], c=labels, cmap='Paired')
+        plt.show()
 
     def get_dbscan(self):
         #if self.arr_data:
         cur_d = self.arr_data[0]
         labels = clust.get_labels_dbscan(cur_d)
+        plt.scatter(cur_d[:, 0], cur_d[:, 1], c=labels, cmap='Paired')
+        plt.show()
+
+    def get_dbscan_c(self):
+        #if self.arr_data:
+        cur_d = self.arr_data[0]
+        labels = clust.get_labels_d_cuda(cur_d)
         plt.scatter(cur_d[:, 0], cur_d[:, 1], c=labels, cmap='Paired')
         plt.show()
 
