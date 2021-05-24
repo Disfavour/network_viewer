@@ -1,7 +1,7 @@
 import sklearn.cluster
-#import cuml.cluster
+import cuml.cluster
 
-#cuml.common.memory_utils.set_global_output_type(numpy)
+cuml.common.memory_utils.set_global_output_type(numpy)
 
 def get_labels_dbscan(data):
     db = sklearn.cluster.DBSCAN(eps=0.0001)
@@ -16,7 +16,7 @@ def get_labels_agg(data):
     labels = clustering.labels_
     return labels
 
-"""
+
 def get_labels_d_cuda(data):
     db = cuml.cluster.DBSCAN(eps=0.0001)
     cl = db.fit(data)
@@ -29,7 +29,7 @@ def get_labels_a_cuda(data):
     clustering = agg.fit(data)
     labels = clustering.labels_
     return labels
-"""
+
 
 if __name__ == "__main__":
     pass
